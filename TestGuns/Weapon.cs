@@ -31,7 +31,7 @@ namespace WeaponExample
 
             if (CurrentMagazineCount > 0)
                 CurrentMagazineCount--;
-            else if(CurrentAmmoCount > 0)
+            if(CurrentMagazineCount == 0 && CurrentAmmoCount > 0)
                 Reload();
 
             if (Degradable)
