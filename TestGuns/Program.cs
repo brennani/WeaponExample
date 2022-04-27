@@ -80,7 +80,14 @@ namespace WeaponExample
                         break;
                     // prints out the current weapon's information
                     case "check":
-                        Console.WriteLine("Current Weapon: \n" + currentInventoryWeapon.ToString());
+                        if (currentInventoryWeapon == null)
+                        {
+                            Console.WriteLine("You haven't swapped to any weapon yet!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Current Weapon: \n" + currentInventoryWeapon.ToString());
+                        }
                         break;
                     case "quit":
                         Console.WriteLine("Seeya later!");
