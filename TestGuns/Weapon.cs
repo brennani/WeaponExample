@@ -22,6 +22,12 @@ namespace WeaponExample
                 Console.WriteLine(Name + " is broken!");
                 return;
             }
+            
+            if(CurrentAmmoCount < 1) 
+            {
+                Console.WriteLine(Name + " is out of ammo!");
+                return;
+            }
 
             if (CurrentMagazineCount > 0)
                 CurrentMagazineCount--;
