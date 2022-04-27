@@ -84,6 +84,7 @@ namespace WeaponExample
                         break;
                     case "quit":
                         Console.WriteLine("Seeya later!");
+                        Console.ReadKey();
                         break;
                     default:
                         Console.WriteLine("Sorry, I don't know what that means.");
