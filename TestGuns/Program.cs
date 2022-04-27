@@ -8,25 +8,25 @@ namespace WeaponExample
 
     public class Program
     {
+        // here is our weapon store, all weapons that exist that have been used by the player can go here
         private static List<Weapon> WeaponStore = new List<Weapon>();
-
+        
+        // this represents our currently held weapon
         private static Weapon currentInventoryWeapon = null;
 
         static void Main(string[] args)
         {
-            // add a minigun and a staff to our weapon store (not the player inventory)
+            // add weapons to the weapon store
             WeaponStore.Add(new PeaShooter());
             WeaponStore.Add(new MiniGun());
             WeaponStore.Add(new SorcererStaff());
-
+            
+            // enter game loop
             RunSimulation();
         }
 
         private static void RunSimulation()
         {
-            // can swap weapon
-            // can fire
-            // can exhaust ammo
             Console.WriteLine("Hello and welcome to the firing range!");
             Console.WriteLine($"We have {WeaponStore.Count} weapons available to try today:");
 
@@ -47,6 +47,7 @@ namespace WeaponExample
 
                 switch(currentCommand)
                 {
+                    // tries to fire if there is a weapon
                     case "fire":
                         if (currentInventoryWeapon == null)
                         {
@@ -60,6 +61,7 @@ namespace WeaponExample
                                 Console.WriteLine($"It's durability is now: {currentInventoryWeapon.Durability}");
                         }
                         break;
+                    // swaps to the next weapon
                     case "swap":
                         // find the index of the currently selected weapon, if there isn't one it returns -1
                         int selectedIndex = WeaponStore.FindIndex(x => x == currentInventoryWeapon);
@@ -72,6 +74,7 @@ namespace WeaponExample
 
                         Console.WriteLine($"Swapped to {currentInventoryWeapon.Name}");
                         break;
+                    // prints out the current weapon's information
                     case "check":
                         Console.WriteLine("Current Weapon: \n" + currentInventoryWeapon.ToString());
                         break;
