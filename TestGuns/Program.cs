@@ -28,11 +28,15 @@ namespace WeaponExample
         private static void RunSimulation()
         {
             Console.WriteLine("Hello and welcome to the firing range!");
+            
+            // using $ in front of a string makes it "interpolated" -> meaning we can put variables in it and they get resolved at runtime
+            // see the curly brackets {}
             Console.WriteLine($"We have {WeaponStore.Count} weapons available to try today:");
 
             foreach (var weapon in WeaponStore)
                 Console.WriteLine("\n" + weapon.ToString());
 
+            // when writing to a console "\n" indicates "new line" character, and "\t" indicates a tab character
             Console.WriteLine("\n\nYou can choose from the following options:"
                 + "\n\tfire -> Fires the current weapon."
                 + "\n\tswap -> Swaps to the next weapon in the store."
