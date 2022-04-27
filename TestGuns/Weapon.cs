@@ -42,6 +42,7 @@ namespace WeaponExample
 
         public void Reload()
         {
+            Console.WriteLine("Reloading...!");
             CurrentMagazineCount += Math.Min(Magazine_Max, CurrentAmmoCount);
             CurrentAmmoCount -= CurrentMagazineCount;
         }
